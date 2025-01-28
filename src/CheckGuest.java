@@ -12,19 +12,33 @@ public class CheckGuest {
 
     //Variabile di verifica
     Boolean trovato = false ;
+    int i = 0;
 
     //Ciclo per trovare il nome nella lista
-    for (int i = 0; i < nomiPartecipanti.length; i++) {
+    //for (int i = 0; i < nomiPartecipanti.length; i++) {
+     /*
       if(nomeOspite.equals(nomiPartecipanti[i])){
         trovato = true;
         break;
       }
     } 
+    */ 
+
+
+    //Ciclo While per trovare il nome nella lista
+    while(i < nomiPartecipanti.length){
+      if(nomeOspite.equals(nomiPartecipanti[i])){
+        trovato = true;
+        break;
+      }
+      i++;
+    }
     
+    // Condizione e messaggio
     if(trovato){
-      System.out.println(String.format("E' nella lista, si diverta %s!", nomeOspite));
+      System.out.println("Benvenuto alla festa " + nomeOspite);
     } else {
-      System.out.println(String.format("Non è nella lista %s!",  nomeOspite ));
+      System.out.println("Non sei nella lista " + nomeOspite );
     }
   }
 }
